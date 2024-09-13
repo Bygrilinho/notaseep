@@ -1,0 +1,112 @@
+{
+  "subjects": [
+    {
+      "id": "aprendizado",
+      "name": "Aprendizado de Máquina",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.4
+        },
+        {
+          "id": "p2",
+          "value": 0.4
+        },
+        {
+          "id": "t1",
+          "value": 0.1
+        },
+        {
+          "id": "t2",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "redes",
+      "name": "Redes de Computadores II",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.4
+        },
+        {
+          "id": "p2",
+          "value": 0.4
+        },
+        {
+          "id": "t1",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "governanca",
+      "name": "Governança e Gestão de Tecnologia da Informação",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.5
+        },
+        {
+          "id": "p2",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "engenharia",
+      "name": "Engenharia de Software",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.15
+        },
+        {
+          "id": "p2",
+          "value": 0.15
+        },
+        {
+          "id": "t1",
+          "value": 0.7
+        }
+      ]
+    },
+    {
+      "id": "arquitetura",
+      "name": "Arquitetura de Software",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.5
+        },
+        {
+          "id": "t1",
+          "value": 0.3
+        },
+        {
+          "id": "at1",
+          "value": 0.1
+        },
+        {
+          "id": "at2",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "metodologia",
+      "name": "Metodologia do Trabalho Científico e Tecnológico",
+      "weights": [
+        {
+          "id": "p1",
+          "value": 0.5
+        },
+        {
+          "id": "p2",
+          "value": 0.5
+        }
+      ]
+    }
+  ]
+}

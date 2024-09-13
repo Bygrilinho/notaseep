@@ -1,0 +1,51 @@
+.grades {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.grade {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.grade input[type="text"] {
+  width: 6rem;
+  font-size: medium;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: box-shadow 0.2s ease;
+
+  background-color: #f6fcff;
+  color: #000;
+  border: 1px solid #aaa;
+}
+
+.grade input[type="text"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 10px 2px #ccc;
+}
+
+.weight {
+  font-size: small;
+  color: #6d91b4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grade input[type="text"] {
+    background-color: #141927;
+    color: #fff;
+    border: 1px solid #2c4064;
+  }
+
+  .grade input[type="text"]:focus-visible {
+    box-shadow: 0 0 10px 2px #2f3c66;
+  }
+
+  .weight {
+    color: #41538f;
+  }
+}
