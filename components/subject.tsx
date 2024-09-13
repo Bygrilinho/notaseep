@@ -22,7 +22,7 @@ function SubjectComponent({ subject }: { subject: Subject }) {
         if (grade) missingGrades.push({ input: grade, weight: weight.value });
         return 0;
       }
-      return parseFloat(grade.value) * weight.value;
+      return parseFloat(grade.value.replace(',', '.')) * weight.value;
     });
 
     const sum = grades.reduce((acc, grade) => acc + grade, 0);
