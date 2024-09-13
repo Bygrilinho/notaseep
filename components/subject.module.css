@@ -49,3 +49,13 @@
     color: #41538f;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .grades {
+    gap: 1rem;
+  }
+
+  .grade input[type="text"] {
+    width: 5.3rem;
+  }
+}
