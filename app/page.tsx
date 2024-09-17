@@ -25,7 +25,7 @@ export default function Home() {
           <Subject key={subject.id} subject={subject} />
         ))}
       </div>
-      <a href="https://github.com/Bygrilinho/notaseep">
+      <a href="https://github.com/Bygrilinho/notaseep" aria-label="Ver no GitHub">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
