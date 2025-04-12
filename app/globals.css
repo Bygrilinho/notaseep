@@ -4,6 +4,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 250, 253, 255;
   --background-end-rgb: 223, 239, 255;
+
+  --accent: #6d91b4;
+  --shadow: #ccc;
+  --input-bg: #f6fcff;
+  --text: #000;
+  --pass: #096900;
+  --fail: #c70000;
 }
 
 * {
@@ -39,6 +46,7 @@ h1 {
 }
 
 h2 {
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -53,9 +61,22 @@ body {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 14;
     --background-end-rgb: 10, 12, 20;
+
+    --accent: #6779b6;
+    --shadow: #2f3c66;
+    --input-bg: #141927;
+    --text: #fff;
+    --pass: #4dff4d;
+    --fail: #ff4d4d;
   }
 
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    text-align: center;
   }
 }

@@ -25,34 +25,42 @@
   border-radius: var(--border-radius);
   transition: box-shadow 0.2s ease;
 
-  background-color: #f6fcff;
-  color: #000;
-  border: 1px solid #aaa;
+  background-color: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
 }
 
 .grade input[type="text"]:focus-visible {
   outline: none;
-  box-shadow: 0 0 10px 2px #ccc;
+  box-shadow: 0 0 10px 2px var(--shadow);
 }
 
 .weight {
   font-size: small;
-  color: #6d91b4;
+  color: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  .grade input[type="text"] {
-    background-color: #141927;
-    color: #fff;
-    border: 1px solid #2c4064;
-  }
+.resultContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
 
-  .grade input[type="text"]:focus-visible {
-    box-shadow: 0 0 10px 2px #2f3c66;
-  }
+.resultContainer .value {
+  font-size: large;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 
-  .weight {
-    color: #6779b6;
+  &.pass {
+    color: var(--pass);
+    border-color: var(--pass);
+  }
+  &.fail {
+    color: var(--fail);
+    border-color: var(--fail);
   }
 }
 
@@ -63,5 +71,15 @@
 
   .grade input[type="text"] {
     width: 5.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grades {
+    justify-content: center;
+  }
+
+  .resultContainer {
+    justify-content: center;
   }
 }
