@@ -82,14 +82,16 @@ function SubjectComponent({ subject }: { subject: Subject }) {
       <div className={styles.grades} id={id}>
         {weights.map((weight) => (
           <div className={styles.grade} key={weight.id}>
-            <label htmlFor={`${id}-${weight.id}`}>{weight.id.toUpperCase()}:</label>
-            <input
-              type="text"
-              id={`${id}-${weight.id}`}
-              ref={(el) => { gradeRefs.current[`${id}-${weight.id}`] = el; }}
-              onInput={calculateAverage} // Trigger recalculation and save on input
-            />
-            <p className={styles.weight}>{weight.value*100}%</p>
+            <label htmlFor={`${id}-${weight.id}`}>{weight.name}</label>
+            <div className={styles.content}>
+              <input
+                type="text"
+                id={`${id}-${weight.id}`}
+                ref={(el) => { gradeRefs.current[`${id}-${weight.id}`] = el; }}
+                onInput={calculateAverage} // Trigger recalculation and save on input
+              />
+              <p className={styles.weight}>{weight.value*100}%</p>
+            </div>
           </div>
         ))}
         <p id={`${id}-result`}>Média: {average.toPrecision(3)}</p>

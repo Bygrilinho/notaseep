@@ -6,10 +6,16 @@
   margin-bottom: 1rem;
 }
 
-.grade {
+.grade .content {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.grade label {
+  font-size: small;
+  display: block;
+  margin-bottom: 0.1rem;
 }
 
 .grade input[type="text"] {
@@ -46,7 +52,7 @@
   }
 
   .weight {
-    color: #41538f;
+    color: #6779b6;
   }
 }
 
