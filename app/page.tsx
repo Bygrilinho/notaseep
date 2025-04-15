@@ -1,4 +1,5 @@
 import Subject from "@/components/subject";
+import Calendar from "@/components/calendar";
 
 import fs from 'fs';
 import path from 'path';
@@ -21,10 +22,11 @@ export default function Home() {
     <main>
       <h1>Calculadora de Notas</h1>
       <div>
-        {subjects.map((subject: Subject) => (
-          <Subject key={subject.id} subject={subject} />
+        {subjects.map((subject: Subject, index) => (
+          <Subject key={subject.id} subject={subject} index={index} />
         ))}
       </div>
+      <Calendar subjects={subjects} />
       <a href="https://github.com/Bygrilinho/notaseep" aria-label="Ver no GitHub">
         <svg
           xmlns="http://www.w3.org/2000/svg"

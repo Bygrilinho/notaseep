@@ -11,6 +11,15 @@
   --text: #000;
   --pass: #096900;
   --fail: #c70000;
+
+  --subject-dot-0: #d51f68;
+  --subject-dot-1: #f96708;
+  --subject-dot-2: #fabd40;
+  --subject-dot-3: #2ddd6a;
+  --subject-dot-4: #6ad7d6;
+  --subject-dot-5: #2bb5f3;
+  --subject-dot-6: #ba29e0;
+  --subject-dot-7: #6db46d;
 }
 
 * {
@@ -68,6 +77,15 @@ body {
     --text: #fff;
     --pass: #4dff4d;
     --fail: #ff4d4d;
+
+    --subject-dot-0: #e94079;
+    --subject-dot-1: #ebb369;
+    --subject-dot-2: #def169;
+    --subject-dot-3: #73df5c;
+    --subject-dot-4: #55a9d2;
+    --subject-dot-5: #64d1fb;
+    --subject-dot-6: #8e73ef;
+    --subject-dot-7: #6db46d;
   }
 
   html {

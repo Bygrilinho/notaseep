@@ -8,7 +8,7 @@ interface MissingGrade {
   weight: number;
 }
 
-function SubjectComponent({ subject }: { subject: Subject }) {
+function SubjectComponent({ subject, index }: { subject: Subject, index: number }) {
   const [average, setAverage] = useState(0);
   const gradeRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
 
@@ -78,7 +78,10 @@ function SubjectComponent({ subject }: { subject: Subject }) {
 
   return (
     <div className={styles.subject}>
-      <h2>{name}</h2>
+      <h2 className={styles.subjectHeader}>
+        <span className={styles.dot} style={{ backgroundColor: `var(--subject-dot-${index})` }} />
+        {name}
+      </h2>
       <div className={styles.grades} id={id}>
         {weights.map((weight) => (
           <div className={styles.grade} key={weight.id}>

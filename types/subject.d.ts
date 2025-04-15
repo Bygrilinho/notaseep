@@ -2,6 +2,7 @@ type Weight = {
   id: string;
   name: string;
   value: number;
+  date?: string[];
 };
 
 type Subject = {
