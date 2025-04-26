@@ -100,7 +100,7 @@ function SubjectComponent({ subject, index }: { subject: Subject, index: number 
       </div>
       <div className={styles.resultContainer}>
         <p className={styles.label}>Média:</p>
-        <p className={`${styles.value} ${parseFloat(average.toPrecision(2)) >= 5 ? styles.pass : styles.fail}`} id={`${id}-result`}>{average.toPrecision(3)}</p>
+        <p className={`${styles.value} ${parseFloat(average.toPrecision(3)) >= 5 ? styles.pass : styles.fail}`} id={`${id}-result`}>{average.toPrecision(3)}</p>
       </div>
     </div>
   );
