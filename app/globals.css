@@ -92,9 +92,3 @@ body {
     color-scheme: dark;
   }
 }
-
-@media screen and (max-width: 600px) {
-  h2 {
-    text-align: center;
-  }
-}
