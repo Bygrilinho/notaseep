@@ -26,20 +26,20 @@ function formatDate(dateStr: string) {
 
 function Calendar({ subjects }: { subjects: Subject[] }) {
   const exams = getAllExams(subjects).sort((a, b) => a.date.localeCompare(b.date));
+  const futureExams = exams.filter((exam) => {
+    const examDate = new Date(exam.date);
+    const now = new Date();
+    examDate.setUTCHours(0, 0, 0, 0);
+    now.setUTCHours(0, 0, 0, 0);
+    return examDate >= now;
+  });
 
   return (
     <div className={styles.timelineWrapper}>
       <h2>Próximas Provas</h2>
       <ul className={styles.timelineList}>
-        {exams.length === 0 && <li>Nenhuma prova cadastrada.</li>}
-        {exams
-          .filter((exam) => {
-            const examDate = new Date(exam.date);
-            const now = new Date();
-            examDate.setUTCHours(0, 0, 0, 0);
-            now.setUTCHours(0, 0, 0, 0);
-            return examDate >= now;
-          })
+        {futureExams.length === 0 && <li>Nenhuma prova cadastrada.</li>}
+        {futureExams
           .map((exam) => (
             <li key={exam.date + exam.subject} className={styles.timelineItem}>
               <span className={styles.timelineDate}>{formatDate(exam.date)}</span>
