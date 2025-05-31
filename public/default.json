@@ -73,12 +73,12 @@
           "id": "p1",
           "name": "Prova 1",
           "date": ["2025-04-24"],
-          "value": 0.35
+          "value": 0.4
         },
         {
           "id": "p2",
           "name": "Prova 2",
-          "value": 0.35
+          "value": 0.4
         },
         {
           "id": "t1",
@@ -88,11 +88,6 @@
         {
           "id": "t2",
           "name": "Prática 2",
-          "value": 0.1
-        },
-        {
-          "id": "t3",
-          "name": "Prática 3",
           "value": 0.1
         }
       ]
