@@ -39,6 +39,7 @@
         {
           "id": "p2",
           "name": "Prova 2",
+          "date": ["2025-06-10"],
           "value": 0.45
         },
         {
@@ -78,6 +79,7 @@
         {
           "id": "p2",
           "name": "Prova 2",
+          "date": ["2025-06-12"],
           "value": 0.4
         },
         {
@@ -105,7 +107,8 @@
         {
           "id": "p2",
           "name": "Prova 2",
-          "value": 0.3
+          "date": ["2025-06-06"],
+          "value": 0.25
         },
         {
           "id": "at1",
@@ -120,7 +123,17 @@
         {
           "id": "at3",
           "name": "Prática 3",
-          "value": 0.2
+          "value": 0.1
+        },
+        {
+          "id": "at4",
+          "name": "Prática 4",
+          "value": 0.05
+        },
+        {
+          "id": "at5",
+          "name": "Projeto Final",
+          "value": 0.1
         }
       ]
     },
@@ -137,6 +150,7 @@
         {
           "id": "p2",
           "name": "Prova 2",
+          "date": ["2025-06-07"],
           "value": 0.5
         }
       ]
@@ -154,6 +168,7 @@
         {
           "id": "p2",
           "name": "Prova 2",
+          "date": ["2025-06-07"],
           "value": 0.6
         }
       ]
