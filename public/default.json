@@ -1,46 +1,48 @@
 {
   "subjects": [
     {
-      "id": "embedded",
-      "name": "Sistemas Embarcados",
+      "id": "topics",
+      "name": "Tópicos em Computação",
       "weights": [
         {
           "id": "p1",
-          "name": "Projeto 01",
-          "value": 0.25
-        },
-        {
-          "id": "p2",
-          "name": "Projeto 02",
-          "value": 0.3
-        },
-        {
-          "id": "p3",
-          "name": "Projeto 03",
-          "value": 0.3
-        },
-        {
-          "id": "l",
-          "name": "Levantamentos",
-          "value": 0.15
+          "name": "Projeto",
+          "value": 1
         }
       ]
     },
     {
-      "id": "lfa",
-      "name": "Linguagens Formais e Autômatos",
+      "id": "ethics",
+      "name": "Ética Profissional em Computação",
       "weights": [
         {
           "id": "p1",
           "name": "Prova 1",
-          "date": ["2025-04-22"],
-          "value": 0.45
+          "date": ["2025-09-29"],
+          "value": 0.5
         },
         {
           "id": "p2",
           "name": "Prova 2",
-          "date": ["2025-06-10"],
-          "value": 0.45
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "operationalResearch",
+      "name": "Pesquisa Operacional",
+      "weights": [
+        {
+          "id": "p1",
+          "name": "Prova 1",
+          "date": ["2025-09-23"],
+          "value": 0.3
+        },
+        {
+          "id": "p2",
+          "name": "Prova 2",
+          "date": ["2025-11-18"],
+          "value": 0.6
         },
         {
           "id": "ex",
@@ -50,126 +52,105 @@
       ]
     },
     {
-      "id": "engenharia2",
-      "name": "Engenharia de Software II",
+      "id": "distributedSystems",
+      "name": "Sistemas Distribuídos",
       "weights": [
         {
           "id": "p1",
-          "name": "Prova",
-          "date": ["2025-04-23", "2025-04-30"],
-          "value": 0.4
+          "name": "Prova 1",
+          "date": ["2025-09-24"],
+          "value": 0.35
         },
+        {
+          "id": "p2",
+          "name": "Prova 2",
+          "date": ["2025-11-19"],
+          "value": 0.35
+        },
+        {
+          "id": "t1",
+          "name": "Trabalho",
+          "date": ["2025-11-12"],
+          "value": 0.3
+        }
+      ]
+    },
+    {
+      "id": "computerGraphics",
+      "name": "Computação Gráfica",
+      "weights": [
+        {
+          "id": "p1",
+          "name": "Prova 1",
+          "date": ["2025-09-19"],
+          "value": 0.35
+        },
+        {
+          "id": "p2",
+          "name": "Prova 2",
+          "date": ["2025-11-28"],
+          "value": 0.35
+        },
+        {
+          "id": "pr1",
+          "name": "Projeto 1",
+          "value": 0.15
+        },
+        {
+          "id": "pr2",
+          "name": "Projeto 2",
+          "value": 0.15
+        },
+        {
+          "id": "sem",
+          "name": "Seminário",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "inovation",
+      "name": "Inovação e Empreendedorismo",
+      "weights": [
         {
           "id": "t1",
           "name": "Projeto",
-          "value": 0.6
+          "date": ["2025-09-27"],
+          "value": 0.5
+        },
+        {
+          "id": "p2",
+          "name": "Prova",
+          "date": ["2025-11-09"],
+          "value": 0.5
         }
       ]
     },
     {
-      "id": "robotica",
-      "name": "Sistemas Robóticos",
+      "id": "compilers",
+      "name": "Compiladores e Interpretadores",
       "weights": [
         {
           "id": "p1",
           "name": "Prova 1",
-          "date": ["2025-04-24"],
+          "date": ["2025-09-27"],
           "value": 0.4
         },
         {
           "id": "p2",
           "name": "Prova 2",
-          "date": ["2025-06-12"],
+          "date": ["2025-11-08"],
           "value": 0.4
         },
         {
           "id": "t1",
-          "name": "Prática 1",
-          "value": 0.1
-        },
-        {
-          "id": "t2",
-          "name": "Prática 2",
-          "value": 0.1
-        }
-      ]
-    },
-    {
-      "id": "multimidia",
-      "name": "Multimídia e Algoritmos",
-      "weights": [
-        {
-          "id": "p1",
-          "name": "Prova 1",
-          "date": ["2025-04-25"],
-          "value": 0.3
-        },
-        {
-          "id": "p2",
-          "name": "Prova 2",
-          "date": ["2025-06-06"],
-          "value": 0.25
-        },
-        {
-          "id": "at1",
-          "name": "Prática 1",
-          "value": 0.1
-        },
-        {
-          "id": "at2",
-          "name": "Prática 2",
-          "value": 0.1
-        },
-        {
-          "id": "at3",
-          "name": "Prática 3",
-          "value": 0.1
-        },
-        {
-          "id": "at4",
-          "name": "Prática 4",
+          "name": "Trabalho 1",
           "value": 0.05
         },
         {
-          "id": "at5",
-          "name": "Projeto Final",
-          "value": 0.1
-        }
-      ]
-    },
-    {
-      "id": "segurancaSistemas",
-      "name": "Segurança de Sistemas",
-      "weights": [
-        {
-          "id": "p1",
-          "name": "Prova 1",
-          "date": ["2025-04-26"],
-          "value": 0.5
-        },
-        {
-          "id": "p2",
-          "name": "Prova 2",
-          "date": ["2025-06-07"],
-          "value": 0.5
-        }
-      ]
-    },
-    {
-      "id": "grafos",
-      "name": "Grafos e Algoritmos",
-      "weights": [
-        {
-          "id": "p1",
-          "name": "Prova 1",
-          "date": ["2025-04-26"],
-          "value": 0.4
-        },
-        {
-          "id": "p2",
-          "name": "Prova 2",
-          "date": ["2025-06-07"],
-          "value": 0.6
+          "id": "t2",
+          "name": "Trabalho 2",
+          "value": 0.15
         }
       ]
     }
