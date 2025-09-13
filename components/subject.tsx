@@ -26,9 +26,8 @@ function SubjectComponent({ subject, index }: { subject: Subject, index: number 
     });
 
     const sum = grades.reduce((acc, grade) => acc + grade, 0);
-    const totalWeight = weights.reduce((acc, weight) => acc + weight.value, 0);
 
-    setAverage(sum / totalWeight);
+    setAverage(sum);
 
     // Save grades to localStorage
     const gradesToSave: { [key: string]: string } = {};
