@@ -6,8 +6,13 @@
       "weights": [
         {
           "id": "p1",
-          "name": "Projeto",
-          "value": 1
+          "name": "Provas",
+          "value": 0.3
+        },
+        {
+          "id": "t1",
+          "name": "Seminário",
+          "value": 0.7
         }
       ]
     },
