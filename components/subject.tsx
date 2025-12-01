@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import { useLayout } from '@/contexts/LayoutContext';
 import styles from './subject.module.css';
 
 interface MissingGrade {
@@ -11,38 +12,25 @@ interface MissingGrade {
 function SubjectComponent({ subject, index }: { subject: Subject, index: number }) {
   const [average, setAverage] = useState(0);
   const gradeRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
+  const { grades, setGrade } = useLayout();
 
   const { id, name, weights } = subject;
+  const subjectGrades = useMemo(() => grades[id] || {}, [grades, id]);
 
   const calculateAverage = useCallback(() => {
-    let missingGrades: MissingGrade[] = [];
-    const grades = weights.map((weight) => {
-      const grade = gradeRefs.current[`${id}-${weight.id}`];
-      if (!grade?.value) {
-        if (grade) missingGrades.push({ input: grade, weight: weight.value });
+    const missingGrades: MissingGrade[] = [];
+    const gradeValues = weights.map((weight) => {
+      const gradeInput = gradeRefs.current[`${id}-${weight.id}`];
+      if (!gradeInput?.value) {
+        if (gradeInput) missingGrades.push({ input: gradeInput, weight: weight.value });
         return 0;
       }
-      return parseFloat(grade.value.replace(',', '.')) * weight.value;
+      return parseFloat(gradeInput.value.replace(',', '.')) * weight.value;
     });
 
-    const sum = grades.reduce((acc, grade) => acc + grade, 0);
+    const sum = gradeValues.reduce((acc, grade) => acc + grade, 0);
 
     setAverage(sum);
-
-    // Save grades to localStorage
-    const gradesToSave: { [key: string]: string } = {};
-    weights.forEach((weight) => {
-      const gradeKey = `${id}-${weight.id}`;
-      const grade = gradeRefs.current[gradeKey];
-      if (grade && grade.value !== '') {
-        gradesToSave[weight.id] = grade.value;
-      }
-    });
-    if (Object.keys(gradesToSave).length === 0) {
-      localStorage.removeItem(`${id}-grades`);
-    } else {
-      localStorage.setItem(`${id}-grades`, JSON.stringify(gradesToSave));
-    }
 
     // Handle missing grades and placeholders
     if (missingGrades.length === 1) {
@@ -61,19 +49,21 @@ function SubjectComponent({ subject, index }: { subject: Subject, index: number 
     }
   }, [id, weights]);
 
+  const handleGradeInput = useCallback((weightId: string, value: string) => {
+    setGrade(id, weightId, value);
+    calculateAverage();
+  }, [id, setGrade, calculateAverage]);
+
+  // Load grades from context and recalculate
   useEffect(() => {
-    const savedGrades = localStorage.getItem(`${id}-grades`);
-    if (savedGrades) {
-      const parsedGrades = JSON.parse(savedGrades);
-      weights.forEach((weight) => {
-        const gradeKey = `${id}-${weight.id}`;
-        if (gradeRefs.current[gradeKey] && parsedGrades[weight.id]) {
-          gradeRefs.current[gradeKey]!.value = parsedGrades[weight.id];
-        }
-      });
-      calculateAverage(); // Recalculate the average with the saved values
-    }
-  }, [id, weights, calculateAverage]);
+    weights.forEach((weight) => {
+      const gradeKey = `${id}-${weight.id}`;
+      if (gradeRefs.current[gradeKey] && subjectGrades[weight.id]) {
+        gradeRefs.current[gradeKey]!.value = subjectGrades[weight.id];
+      }
+    });
+    calculateAverage();
+  }, [id, weights, subjectGrades, calculateAverage]);
 
   return (
     <div className={styles.subject}>
@@ -90,7 +80,7 @@ function SubjectComponent({ subject, index }: { subject: Subject, index: number 
                 type="text"
                 id={`${id}-${weight.id}`}
                 ref={(el) => { gradeRefs.current[`${id}-${weight.id}`] = el; }}
-                onInput={calculateAverage} // Trigger recalculation and save on input
+                onInput={(e) => handleGradeInput(weight.id, (e.target as HTMLInputElement).value)}
               />
               <p className={styles.weight}>{weight.value*100}%</p>
             </div>

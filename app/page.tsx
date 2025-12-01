@@ -1,32 +1,23 @@
+'use client';
+
 import Subject from "@/components/subject";
 import Calendar from "@/components/calendar";
-
-import fs from 'fs';
-import path from 'path';
+import LayoutEditor from "@/components/layout-editor";
+import { useLayout } from "@/contexts/LayoutContext";
 
 export default function Home() {
-  const filePath = path.join(process.cwd(), 'public', 'default.json');
-
-  let data: Data;
-
-  try {
-    data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch (error) {
-    console.error('Error reading JSON file:', error);
-    return <div>Erro ao carregar.</div>;
-  }
-
-  const { subjects } = data;
+  const { subjects } = useLayout();
 
   return (
     <main>
       <h1>Calculadora de Notas</h1>
+      <LayoutEditor />
       <div>
         {subjects.map((subject: Subject, index) => (
           <Subject key={subject.id} subject={subject} index={index} />
         ))}
       </div>
-      <Calendar subjects={subjects} />
+      {subjects.length > 0 && <Calendar subjects={subjects} />}
       <a href="https://github.com/Bygrilinho/notaseep" aria-label="Ver no GitHub">
         <svg
           xmlns="http://www.w3.org/2000/svg"
