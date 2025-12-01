@@ -412,6 +412,9 @@ export default function LayoutEditor() {
         <div className={styles.emptyState}>
           <p>Nenhuma disciplina cadastrada.</p>
           <p>Clique em &quot;Nova Disciplina&quot; para começar ou importe um arquivo JSON.</p>
+          <p className={styles.migrationHint}>
+            Vindo do site antigo? <a href="https://notaseep.netlify.app">Migre seus dados aqui</a>.
+          </p>
         </div>
       )}
 

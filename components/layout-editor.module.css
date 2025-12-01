@@ -80,6 +80,20 @@
   border-radius: var(--border-radius);
 }
 
+.migrationHint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.migrationHint a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.migrationHint a:hover {
+  opacity: 0.7;
+}
+
 .subjectsList {
   display: flex;
   flex-wrap: wrap;
