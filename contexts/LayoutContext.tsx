@@ -12,6 +12,7 @@ interface LayoutContextType {
   setGrade: (subjectId: string, weightId: string, value: string) => void;
   exportLayout: () => void;
   importLayout: (file: File) => Promise<void>;
+  importFullData: (subjects: Subject[], grades: { [subjectId: string]: { [weightId: string]: string } }) => void;
   clearAllData: () => void;
 }
 
@@ -143,6 +144,12 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
     setGrades({});
   }, []);
 
+  // Used for one-time migration from old domain
+  const importFullData = useCallback((newSubjects: Subject[], newGrades: { [subjectId: string]: { [weightId: string]: string } }) => {
+    setSubjectsState(newSubjects);
+    setGrades(newGrades);
+  }, []);
+
   return (
     <LayoutContext.Provider value={{
       subjects,
@@ -154,6 +161,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
       setGrade,
       exportLayout,
       importLayout,
+      importFullData,
       clearAllData,
     }}>
       {isLoaded ? children : null}
