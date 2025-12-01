@@ -6,9 +6,7 @@ function getAllExams(subjects: Subject[]) {
   subjects.forEach((subject, index) => {
     subject.weights.forEach((weight) => {
       if (weight.date) {
-        weight.date.forEach((dateStr) => {
-          exams.push({ date: dateStr, subject: subject.name, subjectIndex: index });
-        });
+        exams.push({ date: weight.date, subject: subject.name, subjectIndex: index });
       }
     });
   });

@@ -1,0 +1,101 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--input-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.card h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--fail);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+.message p {
+  margin: 0.5rem 0;
+}
+
+.newUrl {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.newUrl a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.newUrl a:hover {
+  opacity: 0.8;
+}
+
+.instructions {
+  margin-bottom: 2rem;
+}
+
+.instructions p {
+  margin: 0.5rem 0 1rem;
+  color: var(--text);
+}
+
+.exportButton {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.exportButton:hover {
+  opacity: 0.9;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--accent);
+}
+
+.footer p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.footer a {
+  color: var(--text);
+  transition: opacity 0.2s;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
