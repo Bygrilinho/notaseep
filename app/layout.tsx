@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Calculadora de Notas",
-  description: "Simples calculadora para as médias do 5º Semestre",
+  description: "Uma simples calculadora de notas. Descubra suas médias, quanto precisa tirar, e registre suas datas de provas!",
 };
 
 export default function RootLayout({
