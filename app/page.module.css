@@ -99,3 +99,20 @@
 .footer a:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .exportButton {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .newUrl {
+    font-size: 1.2rem;
+  }
+}
