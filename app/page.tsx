@@ -44,10 +44,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.card}>
-        <h1>⚠️ Site em Migração</h1>
+        <h1>🚀 Estamos de mudança!</h1>
         
         <div className={styles.message}>
-          <p>Este site foi migrado para um novo endereço:</p>
+          <p>Este site está sendo migrado para um novo endereço:</p>
           <p className={styles.newUrl}>
             <a href="https://notas.bygrilinho.dev" target="_blank" rel="noopener noreferrer">
               notas.bygrilinho.dev

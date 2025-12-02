@@ -19,7 +19,7 @@
   margin-top: 0;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: var(--fail);
+  color: var(--pass);
 }
 
 .card h2 {
@@ -67,7 +67,7 @@
   padding: 1rem;
   font-size: 1.1rem;
   font-weight: bold;
-  background: var(--accent);
+  background: var(--confirmbtn);
   color: white;
   border: none;
   border-radius: var(--border-radius);
