@@ -5,6 +5,8 @@ import { createContext, useContext, useState, useEffect, useCallback, ReactNode 
 interface LayoutContextType {
   subjects: Subject[];
   grades: { [subjectId: string]: { [weightId: string]: string } };
+  editingSubjectId: string | null;
+  setEditingSubjectId: (id: string | null) => void;
   setSubjects: (subjects: Subject[]) => void;
   addSubject: (subject: Subject) => void;
   updateSubject: (subjectId: string, subject: Subject) => void;
@@ -25,6 +27,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
   const [subjects, setSubjectsState] = useState<Subject[]>([]);
   const [grades, setGrades] = useState<{ [subjectId: string]: { [weightId: string]: string } }>({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [editingSubjectId, setEditingSubjectId] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -154,6 +157,8 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
     <LayoutContext.Provider value={{
       subjects,
       grades,
+      editingSubjectId,
+      setEditingSubjectId,
       setSubjects,
       addSubject,
       updateSubject,

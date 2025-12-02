@@ -12,7 +12,7 @@ interface MissingGrade {
 function SubjectComponent({ subject, index }: { subject: Subject, index: number }) {
   const [average, setAverage] = useState(0);
   const gradeRefs = useRef<{ [key: string]: HTMLInputElement | null }>({});
-  const { grades, setGrade } = useLayout();
+  const { grades, setGrade, setEditingSubjectId } = useLayout();
 
   const { id, name, weights } = subject;
   const subjectGrades = useMemo(() => grades[id] || {}, [grades, id]);
@@ -69,7 +69,19 @@ function SubjectComponent({ subject, index }: { subject: Subject, index: number 
     <div className={styles.subject}>
       <h2 className={styles.subjectHeader}>
         <span className={styles.dot} style={{ backgroundColor: `var(--subject-dot-${index})` }} />
-        {name}
+        {name}&nbsp;
+        <button 
+          className={styles.editBtn} 
+          onClick={() => setEditingSubjectId(id)}
+          aria-label="Editar disciplina"
+        >
+          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path fill="none" d="M0 0h24v24H0z"/>
+              <path d="M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z" fill="currentColor"/>
+            </g>
+          </svg>
+        </button>
       </h2>
       <div className={styles.grades} id={id}>
         {weights.map((weight) => (

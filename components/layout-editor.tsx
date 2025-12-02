@@ -356,10 +356,11 @@ function NewSubjectModal({ onClose }: NewSubjectModalProps) {
 }
 
 export default function LayoutEditor() {
-  const { subjects, exportLayout, importLayout, clearAllData } = useLayout();
-  const [editingSubject, setEditingSubject] = useState<Subject | null>(null);
+  const { subjects, exportLayout, importLayout, clearAllData, editingSubjectId, setEditingSubjectId } = useLayout();
   const [showNewSubject, setShowNewSubject] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const editingSubject = subjects.find(s => s.id === editingSubjectId) || null;
 
   const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -418,23 +419,10 @@ export default function LayoutEditor() {
         </div>
       )}
 
-      <div className={styles.subjectsList}>
-        {subjects.map((subject) => (
-          <button
-            key={subject.id}
-            className={styles.subjectChip}
-            onClick={() => setEditingSubject(subject)}
-          >
-            {subject.name}
-            <span className={styles.editIcon}>✏️</span>
-          </button>
-        ))}
-      </div>
-
       {editingSubject && (
         <SubjectEditor
           subject={editingSubject}
-          onClose={() => setEditingSubject(null)}
+          onClose={() => setEditingSubjectId(null)}
         />
       )}
 
